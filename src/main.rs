@@ -52,34 +52,38 @@ async fn main() -> Fallible<()> {
                         .status(hyper::StatusCode::MOVED_PERMANENTLY)
                         .header(hyper::header::LOCATION, "https://sukawasatoru.com/")
                         .body(hyper::Body::empty()),
-                    "/android-emulator" => hyper::Response::builder()
+                    "/android-emulator" | "/android-emulator.html" => hyper::Response::builder()
                         .status(hyper::StatusCode::MOVED_PERMANENTLY)
                         .header(
                             hyper::header::LOCATION,
                             "http://sukawasatoru.com/docs/android-emulator",
                         )
                         .body(hyper::Body::empty()),
-                    "/android-things-raspberry-pi-3" => hyper::Response::builder()
-                        .status(hyper::StatusCode::MOVED_PERMANENTLY)
-                        .header(
-                            hyper::header::LOCATION,
-                            "http://sukawasatoru.com/docs/android-things-raspberry-pi-3",
-                        )
-                        .body(hyper::Body::empty()),
-                    "/jenkins" => hyper::Response::builder()
+                    "/android-things-raspberry-pi-3" | "/android-things-raspberry-pi-3.html" => {
+                        hyper::Response::builder()
+                            .status(hyper::StatusCode::MOVED_PERMANENTLY)
+                            .header(
+                                hyper::header::LOCATION,
+                                "http://sukawasatoru.com/docs/android-things-raspberry-pi-3",
+                            )
+                            .body(hyper::Body::empty())
+                    }
+                    "/jenkins" | "/jenkins.html" => hyper::Response::builder()
                         .status(hyper::StatusCode::MOVED_PERMANENTLY)
                         .header(
                             hyper::header::LOCATION,
                             "http://sukawasatoru.com/docs/jenkins",
                         )
                         .body(hyper::Body::empty()),
-                    "/surfacepro3-recovery" => hyper::Response::builder()
-                        .status(hyper::StatusCode::MOVED_PERMANENTLY)
-                        .header(
-                            hyper::header::LOCATION,
-                            "https://sukawasatoru.com/docs/surfacepro3-recovery",
-                        )
-                        .body(hyper::Body::empty()),
+                    "/surfacepro3-recovery" | "/surfacepro3-recovery.html" => {
+                        hyper::Response::builder()
+                            .status(hyper::StatusCode::MOVED_PERMANENTLY)
+                            .header(
+                                hyper::header::LOCATION,
+                                "https://sukawasatoru.com/docs/surfacepro3-recovery",
+                            )
+                            .body(hyper::Body::empty())
+                    }
                     _ => hyper::Response::builder()
                         .status(hyper::StatusCode::NOT_FOUND)
                         .body(hyper::Body::empty()),
