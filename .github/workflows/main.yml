@@ -16,7 +16,7 @@ jobs:
       run: cargo build -v --release
     - uses: actions/upload-artifact@v2
       with:
-        name: tinyport-jp-304
+        name: tinyport-jp-304-macos-x86_64
         path: target/release/tinyport-jp-304
   rustfmt:
     runs-on: ubuntu-latest
