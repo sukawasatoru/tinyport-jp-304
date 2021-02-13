@@ -1,0 +1,20 @@
+[package]
+name = "tinyport-jp-304"
+version = "0.1.0"
+authors = ["Satoru Sukawa <sukawasatoru.github@outlook.jp>"]
+edition = "2018"
+
+[dependencies]
+anyhow = "=1.0.38"
+dotenv = "=0.15.0"
+structopt = "=0.3.21"
+tracing = "=0.1.23"
+tracing-subscriber = "=0.2.15"
+
+[dependencies.hyper]
+version = "=0.14.4"
+features = ["http1", "http2", "server", "runtime"]
+
+[dependencies.tokio]
+version = "=1.2.0"
+features = ["macros", "rt-multi-thread"]
