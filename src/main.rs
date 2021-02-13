@@ -90,6 +90,11 @@ async fn main() -> Fallible<()> {
                 }
             }))
         }))
+        .with_graceful_shutdown(async {
+            tokio::signal::ctrl_c()
+                .await
+                .expect("failed to install CTRL+C signal handler")
+        })
         .await?;
 
     info!("Bye");
