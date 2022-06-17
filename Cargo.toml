@@ -12,7 +12,7 @@ tracing = "=0.1.23"
 tracing-subscriber = "=0.2.15"
 
 [dependencies.hyper]
-version = "=0.14.4"
+version = "=0.14.12"
 features = ["http1", "http2", "server", "runtime"]
 
 [dependencies.tokio]
